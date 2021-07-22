@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="templates" >
+                <template id="h1Temp">
+                <h1 class=" draggable" id="h1" draggable="true"   ondblclick="editable(this)"  >This is heading</h1>
+                </template>
+            
+            
+            
+                    <template id="h2Temp">
+                <h2 class=" draggable" id="h2" draggable="true"   ondblclick="editable(this)"  >This is heading</h2>
+                    </template>
+            
+            
+            
+                <template id="h3Temp">
+                <h3 class=" draggable" id="h3" draggable="true"   ondblclick="editable(this)" ondragstart="drag(event)">This
+                    is H3</h3>
+                </template>
+            
+            
+            
+                <template id="h4Temp">
+                <h4 class=" draggable" id="h4" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">This
+                    is H4</h4>
+                </template>
+            
+            
+            
+                <template id="h5Temp">
+                <h5 class=" draggable" id="h5" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">This
+                    is H5</h5>
+                </template>
+            
+            
+            
+                <template id="h6Temp">
+                <h6 class=" draggable" id="h6" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">This
+                    is H6</h6>
+                </template>
+            
+            
+            
+                <template id="imgTemp">
+                <img class=" draggable" draggable="true" onclick="" ondblclick="editable(this)" ondragstart="drag(event)"
+                    src="../Drag and Drop/curriculum_image_640.jpg" alt="An image was here">
+                </template>
+            
+            
+            
+                <template id="buttonTemp">
+                <button  id="button" class="draggable btn btn-primary " draggable="true" onclick="notEditable(this);" ondblclick="editable(this)"
+                    ondragstart="drag(event)">Button</button>
+                </template>
+            
+            
+            
+                <template id="inputTemp">
+                <input  class=" draggable form-control w-25 m-1" type="text" id="button" draggable="true" ondblclick="editable(this)" ondragstart="drag(event)">
+                </template>
+            
+            
+                <template id="divTemp">
+                <div class=" draggable" id="div" onclick="resizable(this);" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="true"
+                    ondblclick="editable(this)" ondragstart="drag(event)" style="border: solid;min-width: 200px; min-height: 200px;">
+                </div>
+                </template>
+            
+            
+            
+            
+                <template id="formTemp">
+                <form class=" draggable" >
+                <div class="form-group">
+                <label for="exampleInputEmail1">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                </div>
+                <div class="form-group">
+                <label for="exampleInputPassword1">Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                </div>
+                <div class="form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+                </template>
+            
+            
+                <template id="cardTemp">
+                        <div class=" draggable card" id="carddiv" style="width: 18rem;"     draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">
+                <div  id="carddiv2"  class="card-body"    draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">
+                <h5 id="card-h5" contenteditable="true" class="card-title"   draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Card title</h5>
+                <h6 id="card-h6" class="card-subtitle mb-2 text-muted"    draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Card subtitle</h6>
+                <p id="card-p" class="card-text"   draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a id="card-a" href="#" class="card-link"    draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Card link</a>
+                <a id="card-a" href="#" class="card-link" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Another link</a>
+                </div>
+            </div>
+      
+            </template>
+        </section>
+      <div class=" wrapper d-flex align-items-stretch" style="position: relative;">
+			
+    <section id="sidebar-section">
+          <nav id="sidebar" class="active" style=" position: sticky; top: 0; height: 100vh;">
+                  <h1><a href="index.html" class="logo">M.</a></h1>
+          <ul class="list-unstyled components mb-5">
+  
+            
+      <button id="h1" class="btn btn-outline-light contentCreatorButton" draggable="true" >H1</button>
+      <button id="h2"class="btn btn-outline-light contentCreatorButton" draggable="true" >H2</button>
+      <button id="h3"class="btn btn-outline-light contentCreatorButton" draggable="true" >H3</button>
+      <button id="h4"class="btn btn-outline-light contentCreatorButton" draggable="true" >H4 </button>
+      <button id="h5"class="btn btn-outline-light contentCreatorButton" draggable="true" >H5</button>
+      <button id="h6"class="btn btn-outline-light contentCreatorButton" draggable="true" >H6</button>
+      <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Button</button>
+      <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Image</button>
+      <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Input</button>
+      <button class="btn btn-outline-light contentCreatorButton" draggable="true" >div</button>
+      <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Form</button>
+      <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Card</button>
+  
+  
+  
+     
+          </ul>
+  
+          <div class="footer">
+            <p>
+                Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="icon-heart" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib.com</a>
+            </p>
+          </div>
+          </nav>
+        </section>
+         <!-- Page Content  -->
+      <div id="content" class="pb-0 w-100">
+
+        <section id="navbar-header-section">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style="margin-top: 0; padding-top: 0;">
+                <div class="container-fluid">
+
+                    <button type="button" id="sidebarCollapse" class="btn btn-primary">
+                    <i class="fa fa-bars"></i>
+                    <span class="sr-only">Toggle Menu</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Portfolio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                        </li>
+                    </ul>
+                    </div>
+            
+                </div>
+            </nav>
+        </section>
+        <section id="workspace">
+            <div class="container">
+                <div class="container"  style="background-color: green;">
+                    <p class="draggable" draggable="true">inside</p>
+                </div>
+                <p class="draggable" draggable="true">2</p>
+            </div>
+            <div class="container">
+                <p class="draggable" draggable="true">3</p>
+                <p class="draggable" draggable="true">4</p>
+        
+            </div>
+        </section>
+      </div>
+		</div>
+    
+</body>
+<!--  
+<script>
+
+// Add new Content
+
+function addContent(tag) {
+
+      var template = document.getElementById(tag);
+      var cloned = template.content.cloneNode(true);
+      var container = document.getElementById("container");
+
+          for (let i = 0; i < cloned.children.length; i++) {
+              var element = cloned.children[i];
+              var rand = Math.floor(Math.random()*10000);
+              var newId = element.id+rand;
+              element.setAttribute('id',newId);
+              element.style.float="left";
+              element.style.margin= "1%";
+              element.setAttribute('draggable','true');
+              // element.setAttribute('ondbclick','editable(this)');
+              element.setAttribute('ondragstart','drag(event)');
+
+              // draggable="true"
+              //  onclick="notEditable(this);" 
+              //  ondblclick="editable(this)" 
+              //  ondragstart="drag(event)"
+              
+          }
+
+  container.appendChild(cloned);
+
+
+  }
+
+ ///////////////////////////////
+ 
+//    Drag and Drop
+
+// function allowDrop(ev){
+//   ev.preventDefault();
+// }
+
+
+// function drag(ev){
+//   ev.dataTransfer.setData("text/text",ev.target.id);
+// }
+
+
+// function drop(ev){
+//   // ev.preventDefault();
+
+//       try {
+//           var data = ev.dataTransfer.getData('text/text');
+//             ev.target.appendChild(document.getElementById(data));
+//       } catch (error) {
+//           // console.log(error);
+//       }
+  
+  
+// }
+
+
+
+////////////////////////////////////////////////////////////
+// Resize
+
+function resizable (x){
+  var elementId = x.id ;
+  var element = document.getElementById(elementId);
+  element.style.resize="both";
+  element.style.overflow = "auto";
+  element.style.maxWidth = "100%";
+}
+
+
+//////////////////////////////////////////////////////////////
+
+// Editable
+
+
+function editable(y){
+  var elementId = y.id;
+  var element = document.getElementById(elementId);
+  element.setAttribute("contenteditable","true");
+  
+}
+
+function notEditable(y) {
+  var elementId = y.id;
+  var element = document.getElementById(elementId);
+  element.setAttribute("contenteditable","false");
+}
+
+  </script> -->
+    <script src="script.js"></script>
+
+</html>
