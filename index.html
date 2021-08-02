@@ -69,12 +69,12 @@
                 <input  class=" draggable form-control w-25 m-1" type="text" id="button" draggable="true" ondblclick="editable(this)" ondragstart="drag(event)">
                 </template>
             
-            
-                <template id="divTemp">
-                <div class=" draggable" id="div" onclick="resizable(this);" ondragover="allowDrop(event)" ondrop="drop(event)" draggable="true"
-                    ondblclick="editable(this)" ondragstart="drag(event)" style="border: solid;min-width: 200px; min-height: 200px;">
-                </div>
-                </template>
+
+                <template id="gridTemp">
+                        <div class="row"  style="background-color: green;">
+                        </div>
+                    </template>
+
             
             
             
@@ -126,6 +126,7 @@
       <button id="h4"class="btn btn-outline-light contentCreatorButton" draggable="true" >H4 </button>
       <button id="h5"class="btn btn-outline-light contentCreatorButton" draggable="true" >H5</button>
       <button id="h6"class="btn btn-outline-light contentCreatorButton" draggable="true" >H6</button>
+      <button id="grid"class="btn btn-outline-light contentCreatorButton" draggable="true" >grid</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Button</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Image</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Input</button>
@@ -182,8 +183,8 @@
         </section>
         <section id="workspace">
             <div class="container">
-                <div class="container"  style="background-color: green;">
-                    <p class="draggable" draggable="true">inside</p>
+                <div class="container "  style="background-color: green;">
+                    <!-- <p class="draggable" draggable="true">inside</p> -->
                 </div>
                 <p class="draggable" draggable="true">2</p>
             </div>

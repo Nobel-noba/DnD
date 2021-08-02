@@ -1,4 +1,3 @@
-
 let containers = document.querySelectorAll('.container')
 let draggables = document.querySelectorAll('.draggable')
 const contentCreatorButtons = document.querySelectorAll('.contentCreatorButton')
@@ -11,8 +10,6 @@ contentCreatorButtons.forEach(contentCreatorButton =>  {
         currentdragging = contentCreatorButton.id
     })
 })
-
-// used to drag Elements
 
 // call this function when updating the dragging elements should be updated
 function addingEvent(){
@@ -30,7 +27,14 @@ function addingEvent(){
 // initial call for existing dragging elements
 addingEvent()
 
-function containerDragOver(container) {
+function workingContainer(container) {
+    
+    container.addEventListener('dragenter' , () =>{
+        container.classList.add('hovered')
+    })
+    container.addEventListener('dragleave' , () =>{
+        container.classList.remove('hovered')
+    })
     container.addEventListener('dragover' , e =>{
         e.preventDefault()
         e.stopPropagation()
@@ -44,17 +48,6 @@ function containerDragOver(container) {
         }
         
     })
-}
-   
-function workingContainer(container) {
-    
-    container.addEventListener('dragenter' , () =>{
-        container.classList.add('hovered')
-    })
-    container.addEventListener('dragleave' , () =>{
-        container.classList.remove('hovered')
-    })
-    containerDragOver(container)
     
     container.addEventListener('drop',(e) =>{
         e.preventDefault()
@@ -66,11 +59,12 @@ function workingContainer(container) {
         draggables = document.querySelectorAll('.draggable')
         addingEvent()
         containers = document.querySelectorAll('.container')
+        console.log("hi")
+        setContainerEvents()
     })
     
 }
 
-// loop through the containers to place the element in any hovering container
 function setContainerEvents(){
     containers.forEach(container => {
         workingContainer(container)
@@ -78,7 +72,6 @@ function setContainerEvents(){
 }
 
 setContainerEvents()
-
 
 // this function will check where to put the element after in the same container
 function getDragAfterElement(container,y){
@@ -98,56 +91,22 @@ function getDragAfterElement(container,y){
 // Add new Content
 
 function addContent(tag,place) {
-    
-    var template = document.getElementById(tag);
-    var cloned = template.content.cloneNode(true) ;
-        for (let i = 0; i < cloned.children.length; i++) {
-            var element = cloned.children[i];
+    var template = document.createElement("div")
             var rand = Math.floor(Math.random()*10000);
-            var newId = element.id+rand;
-            element.setAttribute('id',newId);
-            if(!element.classList.contains("container") && !element.classList.contains("row"))
+            var newId = template.id+rand;
+            template.setAttribute('id',newId);
+            template.style.float="left";
+            template.style.margin= "1%";
+            template.innerHTML = "hi"
+            template.classList.add("container")
+            if(template.classList[0]!=="container")
             {            
-                element.setAttribute('draggable','true');
-                element.classList.add("draggable")
+                template.setAttribute('draggable','true');
+                template.classList.add("draggable")
             }
             
-        }
 
-
-        var R=5;
-        var C=4;
-    
-
-
-    if(tag == "gridTemp"){
-        
-    console.log("befor")
-    console.log(element)
-        for (let i = 0 ; i < R ; i++){
-            var childRow = document.createElement("div")
-            childRow.classList.add("container")
-            childRow.innerHTML = "number"
-            element.appendChild(childRow)
-        }
-    }
-    
-    place.appendChild(cloned);
-
-    console.log("after")
-    console.log(element)
-    if(tag == "gridTemp"){
-        if(element.children.length > 1){
-            for (let i = 0 ; i < element.children.length ; i++){
-                containerDragOver(element.children[i])
-                element.children[i].classList.add(`col-${3}`)
-            }
-        }
-        containerDragOver(element)
-    }
-    console.log(containers)
-
-    
+    place.appendChild(template);
 
 
 }
