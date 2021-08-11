@@ -15,7 +15,7 @@
       integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
       crossorigin="anonymous"
     />
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@r-tek/colr_pickr@2.0.0/build/colr_pickr.min.css">
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -68,37 +68,37 @@
       <!-- Heading 1 -->
 
       <template id="h1Temp">
-        <h1 class="draggable" draggable="false"  onclick="getId(this)" style="position: relative;">Heading 1</h1>
+        <h1 class="draggable" draggable="false"  onclick="getId(this);event.cancelBubble=true;event.preventDefault()" style="position: relative;">Heading 1</h1>
       </template>
 
        <!-- Heading 2 -->
        <template id="h2Temp">
-        <h2 class="draggable" draggable="true">Heading 2</h2>
+        <h2 class="draggable" draggable="true" onclick="getId(this)" style="position: relative;">Heading 2</h2>
       </template>
 
        <!-- Heading 3 -->
        <template id="h3Temp">
-        <h3 class="draggable" draggable="true">Heading 3</h3>
+        <h3 class="draggable" draggable="true" onclick="getId(this)" style="position: relative;">Heading 3</h3>
       </template>
 
        <!-- Heading 4 -->
        <template id="h4Temp">
-        <h4 class="draggable" draggable="true">Heading 4</h4>
+        <h4 class="draggable" draggable="true" onclick="getId(this)" style="position: relative;">Heading 4</h4>
       </template>
 
        <!-- Heading 5 -->
        <template id="h5Temp">
-        <h5 class="draggable" draggable="true">Heading 5</h5>
+        <h5 class="draggable" draggable="true" onclick="getId(this)" style="position: relative;">Heading 5</h5>
       </template>
 
        <!-- Heading 6 -->
        <template id="h6Temp">
-        <h6 class="draggable" draggable="true">Heading 6</h6>
+        <h6 class="draggable" draggable="true" onclick="getId(this)" style="position: relative;">Heading 6</h6>
       </template>
 
        <!-- Paragraph -->
        <template id="pTemp">
-        <p class="draggable" draggable="true">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium totam distinctio repellat cupiditate nihil fuga nesciunt id magnam ea cumque!</p>
+        <p class="draggable" draggable="true" onclick="getId(this)" style="position: relative;">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium totam distinctio repellat cupiditate nihil fuga nesciunt id magnam ea cumque!</p>
       </template>
 
        <!-- Blockquote -->
@@ -108,7 +108,8 @@
 
        <!-- Div -->
        <template id="divTemp">
-        <div class="contain" style="resize: both;"> consectetur adipisicing elit</div>
+        <!-- <div class="contain" style="position: relative;" onclick="getId(this)"> consectetur adipisicing Element</div> -->
+        <div class="contain draggable" draggable="false"  onclick="getId(this)" style="position: relative;">Heading 1</div>
       </template>
 
       <!-- Hr -->
@@ -151,7 +152,7 @@
 
       <!-- a -->
       <template id="aTemp">
-        <a href="" class="draggable" draggable="true">Link</a>
+        <a href="" class="draggable" draggable="true" onclick="getId(this)" style="position: relative;">Link</a>
       </template>
 
       <!-- br -->
@@ -161,12 +162,12 @@
 
       <!-- Code -->
       <template id="codeTemp">
-        <code class="draggable" draggable="true">Put you code here </code>
+        <code class="draggable" draggable="true"  onclick="getId(this)" style="position: relative;">Put you code here </code>
       </template>
 
       <!-- span -->
       <template id="spanTemp">
-        <span class="draggable" draggable="true">Span content</span>
+        <span class="draggable" draggable="true"  onclick="getId(this)" style="position: relative;">Span content</span>
       </template>
       <!-- Inline text semantics end -->
 
@@ -174,19 +175,19 @@
 
        <!-- button -->
        <template id="buttonTemp">
-        <button class="draggable" draggable="true">Button</button>
+        <button class="draggable" draggable="true"  onclick="getId(this)" style="position: relative;">Button</button>
       </template>
 
        <!-- form -->
        <template id="formTemp">
         <form action="">
-          <label>Form input</label>
+          <label  onclick="getId(this)" style="position: relative;">Form input</label>
         </form>
       </template>
 
        <!-- datalist -->
        <template id="datalistTemp">
-        <label for="browser">Choose your browser from the list:</label>
+        <label for="browser"  onclick="getId(this)" style="position: relative;">Choose your browser from the list:</label>
         <input list="browsers" name="browser" id="browser">
         <datalist id="browsers" class="draggable" draggable="true">
           <option value="1">Option 1</option>
@@ -197,7 +198,7 @@
 
        <!-- fieldset -->
        <template id="fieldsetTemp">
-        <fieldset class="draggable" draggable="true">
+        <fieldset class="draggable" draggable="true"  onclick="getId(this)" style="position: relative;">
           <legend>Fieldset</legend>
           <label>Username</label>
           <input type="text">
@@ -207,7 +208,7 @@
 
        <!-- input-text -->
        <template id="inputTextTemp">
-        <input type="text" class="draggable" draggable="true">
+        <input type="text" class="draggable" draggable="true"  onclick="getId(this)" style="position: relative;">
       </template>
 
       <!-- input-password -->
@@ -726,21 +727,361 @@
         </div>
       </nav>
       <section id="workspace">
-        <div id="contan1" class="contain" onclick=""></div>
-         <div  id="contain2" class="myGrid contain "  onclick="">
-          <div id="gridChild1" class="gridChild contain"  style="position: relative;" onclick="getId(this)">abra kadabra bla bla</div>
-          <div id="gridChild2" class="gridChild contain" style="position: relative;" onclick="getId(this)">2</div>
-          <div id="gridChild3" class="gridChild contain" style="position: relative;" onclick="getId(this)">3</div>
-          <div id="gridChild4" class="gridChild contain" style="position: relative;" onclick="getId(this)">4</div>
-          <div id="gridChild5" class="gridChild contain" style="position: relative;" onclick="getId(this)">3</div>
-          <div id="gridChild6" class="gridChild contain" style="position: relative;" onclick="getId(this)">4</div>
-        </div>
-        <div id="contain3" class="contain" onclick="getId(this)" style="resize: both; overflow: auto;">
-          <div class="draggable" draggable="true" ></div>
-        </div>
+        <section>
+          <div class="contain">
+              <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                  <a class="navbar-brand draggable" draggable="false" href="#">Navbar</a>
+                  <button class="navbar-toggler draggable " draggable="false" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon draggable" draggable="false"></span>
+                  </button>
+                
+                  <div class="collapse navbar-collapse contain" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto draggable "draggable="false" >
+                      <li class="nav-item active draggable " draggable="false" >
+                        <a class="nav-link draggable " draggable="false"  href="#">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item  draggable" draggable="false">
+                        <a class="nav-link draggable" draggable="false" href="#">Link</a>
+                      </li>
+                      <li class="nav-item dropdown draggable" draggable="false">
+                        <a class="nav-link dropdown-toggle draggable" draggable="false" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Dropdown
+                        </a>
+                        <div class="dropdown-menu contain  "  aria-labelledby="navbarDropdown">
+                          <a class="dropdown-item draggable " draggable="false" href="#">Action</a>
+                          <a class="dropdown-item draggable " draggable="false" href="#">Another action</a>
+                          <div class="dropdown-divider"></div>
+                          <a class="dropdown-item draggable " draggable="false" href="#">Something else here</a>
+                        </div>
+                      </li>
+                      <li class="nav-item draggable" draggable="false">
+                        <a class="nav-link disabled draggable " draggable="false" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+                      </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2 draggable " draggable="false" type="search" placeholder="Search" aria-label="Search">
+                      <button class="btn btn-outline-success my-2 my-sm-0 draggable " draggable="false" type="submit">Search</button>
+                    </form>
+                  </div>
+                </nav>
+      
+                <div class="jumbotron jumbotron-fluid mb-5 contain" style="height: 100vh; display:flex; align-items: center; color:white; background:  url('assets/img/bg-masthead.jpg'), rgba(22, 2, 2, 1) ">
+                  <div class="container contain">
+                    <h1 class="display-4 draggable" draggable="false" onclick="event.cancelBubble=true">Fluid jumbotron</h1>
+                    <p class="lead draggable " draggable="false" >This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+                  </div>
+                </div>
+          </div>
+      
+          <div class="container contain">
+             
+      
+                <section>
+                  <div class="my-5 contain">
+                      <h1 class="draggable " draggable="false"   style="font-weight: 1000;">Card groups</h1>
+                  </div>
+        
+                  <div class="card-group my-5 contain">
+                    <div class="card mx-2 contain">
+                      <img src="assets/img/portfolio/thumbnails/4.jpg" class="card-img-top draggable" draggable="false" alt="...">
+                      <div class="card-body contain">
+                        <h5 class="card-title  draggable" draggable="false">Card title</h5>
+                        <p class="card-text draggable" draggable="false">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                        <p class="card-textdraggable "draggable="false" ><small class="text-muted draggable" draggable="false">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card mx-2 contain">
+                      <img src="assets/img/portfolio/thumbnails/5.jpg" class="card-img-top draggable" draggable="false" alt="...">
+                      <div class="card-body contain">
+                        <h5 class="card-title draggable" draggable="false">Card title</h5>
+                        <p class="card-text draggable" draggable="false">This card has supporting text below as a natural lead-in to additional content.</p>
+                        <p class="card-text draggable" draggable="false"><small class="text-muted draggable" draggable="false">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                    <div class="card mx-2 contain">
+                      <img src="assets/img/portfolio/thumbnails/6.jpg" class="card-img-top draggable" draggable="false" alt="...">
+                      <div class="card-body contain">
+                        <h5 class="card-title draggable" draggable="false">Card title</h5>
+                        <p class="card-text draggable" draggable="false">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+                        <p class="card-text draggable" draggable="false"><small class="text-muted draggable" draggable="false">Last updated 3 mins ago</small></p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+      
+               <section>
+                  <div class="my-5 contain">
+                      <h1 class=" draggable" draggable="false" style="font-weight: 1000;">Carousel</h1>
+                  </div>
+                    <div class="container my-5 px-5 contain">
+                      <div class="row justify-content-center contain">
+                          <div id="carouselExampleCaptions" class="carousel slide col-lg-10  contain" data-ride="carousel">
+                              <ol class="carousel-indicators draggable" draggable="false">
+                                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active draggable" draggable="false"></li>
+                                <li class=" draggable" draggable="false" data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                                <li class=" draggable" draggable="false" data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                              </ol>
+                              <div class="carousel-inner contain">
+                                <div class="carousel-item active contain">
+                                  <img src="assets/img/portfolio/thumbnails/2.jpg" class="d-block w-100 draggable" draggable="false" alt="...">
+                                  <div class="carousel-caption d-none d-md-block contain">
+                                    <h5 class=" draggable" draggable="false">First slide label</h5>
+                                    <p class=" draggable" draggable="false">Some representative placeholder content for the first slide.</p>
+                                  </div>
+                                </div>
+                                <div class="carousel-item contain">
+                                  <img src="assets/img/portfolio/thumbnails/1.jpg" class="d-block w-100 draggable" draggable="false" alt="...">
+                                  <div class="carousel-caption d-none d-md-block contain">
+                                    <h5 class=" draggable" draggable="false">Second slide label</h5>
+                                    <p class=" draggable" draggable="false">Some representative placeholder content for the second slide.</p>
+                                  </div>
+                                </div>
+                                <div class="carousel-item contain">
+                                  <img src="assets/img/portfolio/thumbnails/3.jpg" class="d-block w-100 draggable" draggable="false" alt="...">
+                                  <div class="carousel-caption d-none d-md-block contain draggable" draggable="false">
+                                    <h5 class=" draggable" draggable="false">Third slide label</h5>
+                                    <p class=" draggable" draggable="false">Some representative placeholder content for the third slide.</p>
+                                  </div>
+                                </div>
+                              </div>
+                              <a class="carousel-control-prev draggable" draggable="false" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon draggable" draggable="false" aria-hidden="true"></span>
+                                <span class="sr-only draggable" draggable="false">Previous</span>
+                              </a>
+                              <a class="carousel-control-next draggable" draggable="false" href="#carouselExampleCaptions" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon draggable" draggable="false" aria-hidden="true"></span>
+                                <span class="sr-only draggable" draggable="false">Next</span>
+                              </a>
+                            </div>
+                      </div>
+                    </div>
+               </section>
+      
+                <!-- Bootstrap 5 Contact Form Snippet -->
+      
+              <section class="">
+                  <div class="contain">
+                      <h1 class=" draggable" draggable="false" style="font-weight: 1000;">Contact us</h1>
+                  </div>
+      
+                  <div class="container px-5 my-5 contain">
+                      <div class="row justify-content-center contain">
+                      <div class="col-lg-8 contain">
+                          <div class="card border-0 rounded-3 shadow-lg contain">
+                          <div class="card-body p-4 contain">
+                              <div class="text-center contain">
+                              <div class="h1 fw-light contain" >Contact Form</div>
+                              <p class="mb-4 text-muted draggable" draggable="false">A functional, Bootstrap 5 contact form with validation built using SB Forms. Try it out!</p>
+                              </div>
+                  
+                           
+                  
+                              <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+                  
+                              <!-- Name Input -->
+                              <div class="form-floating mb-3 contain">
+                                  <input class="form-control draggable" draggable="false" id="name" type="text" placeholder="Name" data-sb-validations="required" />
+                                  <label class=" draggable" draggable="false" for="name">Name</label>
+                                  <div class="invalid-feedback contain" data-sb-feedback="name:required">Name is required.</div>
+                              </div>
+                  
+                              <!-- Email Input -->
+                              <div class="form-floating mb-3 contain">
+                                  <input class="form-control draggable" draggable="false" id="emailAddress" type="email" placeholder="Email Address" data-sb-validations="required,email" />
+                                  <label class=" draggable" draggable="false" for="emailAddress">Email Address</label>
+                                  <div class="invalid-feedback contain "  data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                                  <div class="invalid-feedback contain" data-sb-feedback="emailAddress:email">Email Address Email is not valid.</div>
+                              </div>
+                  
+                              <!-- Message Input -->
+                              <div class="form-floating mb-3 contain">
+                                  <textarea class="form-control draggable" draggable="false" id="message" type="text" placeholder="Message" style="height: 10rem;" data-sb-validations="required"></textarea>
+                                  <label class=" draggable" draggable="false" for="message">Message</label>
+                                  <div class="invalid-feedback contain" data-sb-feedback="message:required">Message is required.</div>
+                              </div>
+                  
+                              <!-- Submit success message -->
+                              <div class="d-none contain" id="submitSuccessMessage">
+                                  <div class="text-center mb-3 contain">
+                                  <div class="fw-bolder contain">Form submission successful!</div>
+                                  <p class=" draggable" draggable="false">To activate this form, sign up at</p>
+                                  <a class=" draggable" draggable="false" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                                  </div>
+                              </div>
+                  
+                              <!-- Submit error message -->
+                              <div class="d-none contain" id="submitErrorMessage">
+                                  <div class="text-center text-danger mb-3 contain">Error sending message!</div>
+                              </div>
+                  
+                              <!-- Submit button -->
+                              <div class="d-grid contain">
+                                  <button class="btn btn-primary btn-lg disabled draggable" draggable="false" id="submitButton" type="submit">Submit</button>
+                              </div>
+                              </form>
+                              <!-- End of contact form -->
+                  
+                          </div>
+                          </div>
+                      </div>
+                      </div>
+                  </div>
+              </section>
+      
+              
+      
+      
+              
+          </div>
+      
+          <div class="contain">
+              <section style="height:80px;"></section>
+              
+              <!----------- Footer ------------>
+              <footer class="footer-bs">
+                  <div class="row contain">
+                      <div class="col-md-3 footer-brand animated fadeInLeft contain">
+                          <h2 class=" draggable" draggable="false">Logo</h2>
+                          <p class=" draggable" draggable="false">Suspendisse hendrerit tellus laoreet luctus pharetra. Aliquam porttitor vitae orci nec ultricies. Curabitur vehicula, libero eget faucibus faucibus, purus erat eleifend enim, porta pellentesque ex mi ut sem.</p>
+                          <p class=" draggable" draggable="false">© 2014 BS3 UI Kit, All rights reserved</p>
+                      </div>
+                      <div class="col-md-4 footer-nav animated fadeInUp contain">
+                          <h4 class=" draggable" draggable="false">Menu —</h4>
+                          <div class="col-md-6 contain">
+                              <ul class="pages draggable" draggable="false">
+                                  <li class=" draggable" draggable="false"><a class=" draggable" draggable="false" href="#">Travel</a></li>
+                                  <li class=" draggable" draggable="false"><a class=" draggable" draggable="false" href="#">Nature</a></li>
+                                  <li class=" draggable" draggable="false"><a class=" draggable" draggable="false" href="#">Explores</a></li>
+                                  <li class=" draggable" draggable="false"><a class=" draggable" draggable="false" href="#">Science</a></li>
+                                  <li class=" draggable" draggable="false"><a class=" draggable" draggable="false" href="#">Advice</a></li>
+                              </ul>
+                          </div>
+                          <div class="col-md-6 contain">
+                              <ul class="list draggable" draggable="false">
+                                  <li class="draggable" draggable="false"  ><a  class=" draggable" draggable="false" href="#">About Us</a></li>
+                                  <li class=" draggable" draggable="false" ><a  class=" draggable" draggable="false" href="#">Contacts</a></li>
+                                  <li class=" draggable" draggable="false" ><a  class=" draggable" draggable="false" href="#">Terms & Condition</a></li>
+                                  <li class=" draggable" draggable="false" ><a  class=" draggable" draggable="false" href="#">Privacy Policy</a></li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-md-2 footer-social animated fadeInDown contain">
+                          <h4 class="draggable" draggable="false">Follow Us</h4>
+                          <ul class="draggable" draggable="false">
+                              <li class="draggable" draggable="false"><a class="draggable" draggable="false" href="#">Facebook</a></li>
+                              <li class="draggable" draggable="false"><a class="draggable" draggable="false" href="#">Twitter</a></li>
+                              <li class="draggable" draggable="false"><a class="draggable" draggable="false" href="#">Instagram</a></li>
+                              <li class="draggable" draggable="false"><a class="draggable" draggable="false" href="#">RSS</a></li>
+                          </ul>
+                      </div>
+                      <div class="col-md-3 footer-ns animated fadeInRight contain">
+                          <h4 class=" draggable" draggable="false">Newsletter</h4>
+                          <p class=" draggable" draggable="false">A rover wearing a fuzzy suit doesn’t alarm the real penguins</p>
+                          <p class=" draggable" draggable="false">
+                              <div class="input-group contain">
+                                <input type="text" class="form-control draggable" draggable="false" placeholder="Search for...">
+                                <span class="input-group-btn draggable" draggable="false">
+                                  <button class="btn btn-default draggable" draggable="false" type="button"><span class="glyphicon glyphicon-envelope"></span></button>
+                                </span>
+                              </div><!-- /input-group -->
+                           </p>
+                      </div>
+                  </div>
+              </footer>
+              <section style="text-align:center; margin:10px auto;"></section>
+          
+          </div>
+        
+         </section>
       </section>
     </section>
+    <section class="style-sidebar">
+      <section class="tabs-style-sidebar">
+          <div class="style-tab">Style</div>
+          <div class="animation-tab">Animation</div>
+          <div class="attribute-tab">Attribute</div>
 
+      </section>
+
+      <section class="main-style-sidebar">
+          <ul class="styleUl">
+         <p class="accordiond"> <i class='bx bx-down-arrow'></i> Typography </p>
+            <div class="style-elements">
+
+
+              <div class="style-element">
+                <label for="" class="style-label">Font</label>
+                <select  class="style-input">
+                  <option value="">Sans serif</option>
+                  <option value="">Timesnew roman</option>
+                  <option value="">serif</option>
+                  <option value="">cursive</option>
+                  <option value="">segoe Ui</option>
+                </select> 
+              </div>
+
+              <div class="style-element">
+                <label for="" class="style-label">Weight</label>
+                <select  class="style-input">
+                  <option value="">light</option>
+                  <option value="">Regular</option>
+                  <option value="">Bold</option>
+                  <option value="">Black</option>
+                </select> 
+              </div>
+              
+
+              <div class="style-element">
+                <label for="" class="style-label">Color</label>
+               <button class="style-input" id="picker_launcher">#4c0082</button>
+              </div>
+
+
+             <div class="style-element">
+                <label for="" class="style-label">Font size</label>
+                <input type="number" name="" class="style-input two-style-input" id="">
+                <select  class="style-input two-style-input">
+                  <option value="">PX</option>
+                  <option value="">EM</option>
+                  <option value="">%</option>
+                  <option value="">REM</option>
+                  <option value="">CH</option>
+                  <option value="">VW</option>
+                  <option value="">VH</option>
+                </select> 
+              </div>
+
+              <div class="style-element">
+                <label for="" class="style-label">Allign</label>
+                <div class="style-element-grid">
+
+                  <i class='bx bx-align-left style-input'></i>
+                  <i class='bx bx-align-middle style-input' ></i>
+                  <i class='bx bx-align-right style-input' ></i>
+                  <i class='bx bx-align-justify style-input'></i>
+                </div>
+              </div>
+
+
+              <div class="style-element">
+                <label for="" class="style-label">Style</label>
+                <div class="style-element-grid">
+
+                  <i class='bx style-input bx-italic' ></i>
+                  <i class='bx style-input bx-underline' ></i>
+                  <i class='bx style-input bx-strikethrough' ></i>
+                  <i class='bx style-input bx-x'></i>
+                </div>
+              </div>
+
+             
+            </div>
+
+            
+        </ul>
+      </section>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/@r-tek/colr_pickr@2.0.0/build/colr_pickr.min.js"></script>
     <script src="script.js"></script>
   </body>
 </html>

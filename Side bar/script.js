@@ -96,42 +96,52 @@ function workingContainer(container) {
   containerDragOver(container);
   container.addEventListener("dblclick", (e) => {
     e.preventDefault();
-    e.stopImmediatePropagation()
+    e.stopImmediatePropagation();
     var miniMenu = document.createElement("div");
     var moveMenu = document.createElement("span");
     var resizeMenu = document.createElement("span");
     var styleMenu = document.createElement("span");
+    var editMenu = document.createElement("span");
     var removeMenu = document.createElement("span");
 
     miniMenu.classList.add("moveStyle");
-    moveMenu.classList.add("moveChild","bx","bx-move");
-    resizeMenu.classList.add("moveChild","bx","bx-screenshot");
-    styleMenu.classList.add("moveChild","bx","bxl-css3");
-    removeMenu.classList.add("moveChild","bx","bx-trash");
+    moveMenu.classList.add("moveChild", "bx", "bx-move");
+    resizeMenu.classList.add("moveChild", "bx", "bx-screenshot");
+    styleMenu.classList.add("moveChild", "bx", "bxl-css3");
+    editMenu.classList.add("moveChild", "bx", "bx-pencil");
+    removeMenu.classList.add("moveChild", "bx", "bx-trash");
     // miniMenu.style.display = "flex";
     // miniMenu.style.flexDirection = "horizontal";
     miniMenu.setAttribute("id", "miniMenu");
     miniMenu.setAttribute("draggable", "true");
-    miniMenu.addEventListener("dragstart",() => {
-      miniMenu.parentNode.setAttribute("draggable","true");
+    miniMenu.addEventListener("dragstart", () => {
+      miniMenu.parentNode.classList.remove("contain");
+      miniMenu.parentNode.classList.add("draggable");
+      miniMenu.parentNode.setAttribute("draggable", "true");
     });
-    miniMenu.addEventListener("dragend",() => {
-      miniMenu.parentNode.setAttribute("draggable","false");
+    miniMenu.addEventListener("dragend", () => {
+      miniMenu.parentNode.classList.add("contain");
+      miniMenu.parentNode.setAttribute("draggable", "false");
     });
 
-    resizeMenu.setAttribute("onclick","resize()")
-    removeMenu.setAttribute("onclick","deleteNode()")
+    resizeMenu.setAttribute("onclick", "resize()");
+    removeMenu.setAttribute("onclick", "deleteNode()");
+    editMenu.setAttribute("onclick", "editElement()");
+    miniMenu.setAttribute("contenteditable", "false");
     // miniMenu.setAttribute("onClick", "changeColor()");
     var menu = document.getElementById("miniMenu");
     if (menu !== null) {
       menu.parentNode.style.resize = "none";
+      menu.parentNode.removeAttribute("contenteditable");
       menu.remove();
     }
     // miniMenu.parentNode.style.position = "relative";
+    console.log(selectedElement);
     selectedElement.appendChild(miniMenu);
     miniMenu.appendChild(moveMenu);
     miniMenu.appendChild(resizeMenu);
     miniMenu.appendChild(styleMenu);
+    miniMenu.appendChild(editMenu);
     miniMenu.appendChild(removeMenu);
   });
 
@@ -313,9 +323,58 @@ function getId(itemId) {
 }
 
 function resize() {
-  selectedElement.style.resize="both";
+  selectedElement.style.resize = "both";
 }
 
 function deleteNode() {
-  selectedElement.remove()
+  selectedElement.remove();
 }
+
+function editElement() {
+  selectedElement.setAttribute("contenteditable", "true");
+}
+/**
+ * How to Set Up
+ */
+
+/**
+ * Create a new ColorPicker instance, which takes 2 parameters
+ *
+ * Parameter 1 [HTMLElement]: the button you want to launch the editor
+ * Parameter 2 [String] (Optional): A color
+ */
+
+const button = document.getElementById("picker_launcher");
+let picker = new ColorPicker(button, "#4c0082");
+
+/**
+ * What do you want to do after you have chosen the color?
+ *
+ * You can specify this in an EventListener, assigned to your button
+ */
+
+button.addEventListener("colorChange", function (event) {
+  // This will give you the color you selected
+  const color = event.detail.color.hexa;
+
+  // Change the color of the background
+  selectedElement.style.backgroundColor = color;
+  button.innerText = color;
+});
+
+function generateId() {
+  // var station = getElementById("workspace");
+
+  document.querySelectorAll("#workspace *").forEach((item) => {
+    item.setAttribute("id", Math.floor(Math.random() * 100000000));
+    item.setAttribute("onclick", "getId(this);event.cancelBubble=true;event.preventDefault()");
+    item.style.position = "relative";
+  });
+}
+
+generateId();
+
+window.addEventListener("load", (e) => {
+  e.preventDefault;
+  e.stopImmediatePropagation;
+});
