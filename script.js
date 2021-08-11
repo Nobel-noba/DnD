@@ -1,3 +1,4 @@
+
 let containers = document.querySelectorAll(".container");
 let draggables = document.querySelectorAll(".draggable");
 const contentCreatorButtons = document.querySelectorAll(
@@ -12,6 +13,19 @@ contentCreatorButtons.forEach((contentCreatorButton) => {
     currentdragging = contentCreatorButton.id;
   });
 });
+
+
+// function used to resize the element clicked
+function resize(item) {
+    item.style.resize = "both"
+}
+
+
+// function to make the text inside it to be editable
+function editable(element){
+    element.setAttribute("contenteditable","true");
+    
+  }
 
 // used to drag Elements
 
@@ -33,6 +47,7 @@ addingEvent();
 
 function containerDragOver(container) {
   container.addEventListener("dragover", (e) => {
+
     e.preventDefault();
     e.stopPropagation();
     const afterElement = getDragAfterElement(container, e.clientY);
@@ -47,7 +62,6 @@ function containerDragOver(container) {
 
 function workingContainer(container) {
   container.addEventListener("dragenter", () => {
-    console.log(container);
     container.classList.add("hovered");
   });
   container.addEventListener("dragleave", () => {
@@ -133,16 +147,23 @@ function addContent(tag, place) {
   }
 
   place.appendChild(cloned);
+//   containerDragOver(document.getElementById(newId))
   if (tag == "gridTemp") {
     if (element.children.length > 1) {
+        containerDragOver(element)
       for (let i = 0; i < element.children.length; i++) {
-        element.children[i].classList.add("row");
+            containerDragOver(element.children[i])
+            element.children[i].classList.add("row");
         for (let j = 0; j < element.children[i].children.length; j++) {
           containerDragOver(element.children[i].children[j]);
-          element.children[i].children[j].classList.add(`col-${3}`);
+          element.children[i].children[j].classList.add(`col`);
+          element.children[i].children[j].setAttribute("onclick","resize(this)");
+          element.children[i].children[j].setAttribute("ondblclick","editable(this)");
+          element.children[i].children[j].setAttribute("ondblclick","editable(this)");
         }
       }
     }
-    containerDragOver(element);
+    // containerDragOver(element);
   }
 }
+

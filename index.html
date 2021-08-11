@@ -31,21 +31,21 @@
             
             
                 <template id="h4Temp">
-                <h4 class=" draggable" id="h4" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">This
+                <h4 class=" draggable" id="h4" draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">This
                     is H4</h4>
                 </template>
             
             
             
                 <template id="h5Temp">
-                <h5 class=" draggable" id="h5" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">This
+                <h5 class=" draggable" id="h5" draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">This
                     is H5</h5>
                 </template>
             
             
             
                 <template id="h6Temp">
-                <h6 class=" draggable" id="h6" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">This
+                <h6 class=" draggable" id="h6" draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">This
                     is H6</h6>
                 </template>
             
@@ -59,7 +59,7 @@
             
             
                 <template id="buttonTemp">
-                <button  id="button" class="draggable btn btn-primary " draggable="true" onclick="notEditable(this);" ondblclick="editable(this)"
+                <button  id="button" class="draggable btn btn-primary " draggable="true"  ondblclick="editable(this)"
                     ondragstart="drag(event)">Button</button>
                 </template>
             
@@ -71,9 +71,18 @@
             
 
                 <template id="gridTemp">
-                        <div class="row container"  style="background-color: green;">
-                        </div>
-                    </template>
+                    <div class="row container"  style="background-color: green;">
+                    </div>
+                </template>
+                <template id="divTemp">
+                    <div class="container" id=""  style="background-color: rgb(228, 170, 10);">
+                        hi
+                    </div>
+                </template>
+
+                <template id="divTemp">
+                    <div class="contain draggable" style="resize: both;" draggable="true"> consectetur adipisicing elit</div>
+                  </template>
 
             
             
@@ -100,13 +109,13 @@
             
             
                 <template id="cardTemp">
-                        <div class=" draggable card" id="carddiv" style="width: 18rem;"     draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">
-                <div  id="carddiv2"  class="card-body"    draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">
-                <h5 id="card-h5" contenteditable="true" class="card-title"   draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Card title</h5>
-                <h6 id="card-h6" class="card-subtitle mb-2 text-muted"    draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Card subtitle</h6>
-                <p id="card-p" class="card-text"   draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                <a id="card-a" href="#" class="card-link"    draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Card link</a>
-                <a id="card-a" href="#" class="card-link" draggable="true" onclick="notEditable(this);" ondblclick="editable(this)" ondragstart="drag(event)">Another link</a>
+                <div class=" draggable card" id="carddiv" style="width: 18rem;"     draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">
+                <div  id="carddiv2"  class="card-body"  onclick="resize(this)"  draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">
+                <h5 id="card-h5" contenteditable="true" class="card-title"   draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">Card title</h5>
+                <h6 id="card-h6" class="card-subtitle mb-2 text-muted"    draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">Card subtitle</h6>
+                <p id="card-p" class="card-text"   draggable="true" ondblclick="editable(this)" ondragstart="drag(event)">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <a id="card-a" href="#" class="card-link"    draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">Card link</a>
+                <a id="card-a" href="#" class="card-link" draggable="true"  ondblclick="editable(this)" ondragstart="drag(event)">Another link</a>
                 </div>
             </div>
       
@@ -127,12 +136,17 @@
       <button id="h5"class="btn btn-outline-light contentCreatorButton" draggable="true" >H5</button>
       <button id="h6"class="btn btn-outline-light contentCreatorButton" draggable="true" >H6</button>
       <button id="grid"class="btn btn-outline-light contentCreatorButton" draggable="true" >grid</button>
+      <button id="div"class="btn btn-outline-light contentCreatorButton" draggable="true" >div</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Button</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Image</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Input</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >div</button>
       <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Form</button>
-      <button class="btn btn-outline-light contentCreatorButton" draggable="true" >Card</button>
+      <button id="card" class="btn btn-outline-light contentCreatorButton" draggable="true" >Card</button>
+      <div id="div" class="ElementItem contentCreatorButton" draggable="true">
+        <div class="ElementIcon"><i class="bx bx-checkbox"></i></div>
+        <div class="ElementName">div</div>
+      </div>
   
   
   
@@ -183,115 +197,21 @@
         </section>
         <section id="workspace">
             <div class="container">
-                <div class="container "  style="background-color: green;">
+                <div class="container " onclick="resize(this)"  style="background-color: green;">
                     <!-- <p class="draggable" draggable="true">inside</p> -->
                 </div>
                 <p class="draggable" draggable="true">2</p>
             </div>
-            <div class="container">
+            <div class="container" style="resize: both;">
                 <p class="draggable" draggable="true">3</p>
                 <p class="draggable" draggable="true">4</p>
-        
+                
             </div>
         </section>
       </div>
 		</div>
     
 </body>
-<!--  
-<script>
-
-// Add new Content
-
-function addContent(tag) {
-
-      var template = document.getElementById(tag);
-      var cloned = template.content.cloneNode(true);
-      var container = document.getElementById("container");
-
-          for (let i = 0; i < cloned.children.length; i++) {
-              var element = cloned.children[i];
-              var rand = Math.floor(Math.random()*10000);
-              var newId = element.id+rand;
-              element.setAttribute('id',newId);
-              element.style.float="left";
-              element.style.margin= "1%";
-              element.setAttribute('draggable','true');
-              // element.setAttribute('ondbclick','editable(this)');
-              element.setAttribute('ondragstart','drag(event)');
-
-              // draggable="true"
-              //  onclick="notEditable(this);" 
-              //  ondblclick="editable(this)" 
-              //  ondragstart="drag(event)"
-              
-          }
-
-  container.appendChild(cloned);
-
-
-  }
-
- ///////////////////////////////
- 
-//    Drag and Drop
-
-// function allowDrop(ev){
-//   ev.preventDefault();
-// }
-
-
-// function drag(ev){
-//   ev.dataTransfer.setData("text/text",ev.target.id);
-// }
-
-
-// function drop(ev){
-//   // ev.preventDefault();
-
-//       try {
-//           var data = ev.dataTransfer.getData('text/text');
-//             ev.target.appendChild(document.getElementById(data));
-//       } catch (error) {
-//           // console.log(error);
-//       }
-  
-  
-// }
-
-
-
-////////////////////////////////////////////////////////////
-// Resize
-
-function resizable (x){
-  var elementId = x.id ;
-  var element = document.getElementById(elementId);
-  element.style.resize="both";
-  element.style.overflow = "auto";
-  element.style.maxWidth = "100%";
-}
-
-
-//////////////////////////////////////////////////////////////
-
-// Editable
-
-
-function editable(y){
-  var elementId = y.id;
-  var element = document.getElementById(elementId);
-  element.setAttribute("contenteditable","true");
-  
-}
-
-function notEditable(y) {
-  var elementId = y.id;
-  var element = document.getElementById(elementId);
-  element.setAttribute("contenteditable","false");
-}
-
-  </script> -->
-    <script src="script.js"></script>
+   <script src="script.js"></script>
 
 </html>

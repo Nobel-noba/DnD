@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+      integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 0 -->
+
+    <section id="templates">
+      <template>
+      
+      </template>
+
+      <!-- Lay out templates -->
+      <template id="myGridTemp">
+         <style>
+          .myGrid{
+            border: solid;
+            display: grid; 
+            grid-template-columns: 1fr 1fr 0.5fr 0.5fr;
+            /* grid-template-columns: repeat(2, auto); */
+            overflow: auto;
+          }
+          .gridChild{
+            overflow: auto;
+            color: red;
+            min-height: 200px;
+            border: solid thin gray;
+          }
+
+        
+       </style>
+      
+        <div class="myGrid contain" >
+          <div id="gridChild1" class="gridChild contain" style="position: relative;" onclick="getId(this)">10</div>
+          <div class="gridChild contain" style="position: relative;" onclick="getId(this)">2</div>
+          <div class="gridChild contain" style="position: relative;" onclick="getId(this)">3</div>
+          <div class="gridChild contain" style="position: relative;" onclick="getId(this)">4</div>
+          <div class="gridChild contain" style="position: relative;" onclick="getId(this)">3</div>
+          <div class="gridChild contain" style="position: relative;" onclick="getId(this)">4</div>
+        </div>
+      </template> 
+      <!-- <template id="divTemp">
+        <div class="contain"></div>
+        <div class=" contain  draggable" draggable="true" style="border: solid thin; min-height: 200px;"></div>
+      </template> -->
+
+      <!-- lay out template ends -->
+
+
+      <!-- Text Content -->
+
+      <!-- Heading 1 -->
+
+      <template id="h1Temp">
+        <h1 class="draggable" draggable="false"  onclick="getId(this)" style="position: relative;">Heading 1</h1>
+      </template>
+
+       <!-- Heading 2 -->
+       <template id="h2Temp">
+        <h2 class="draggable" draggable="true">Heading 2</h2>
+      </template>
+
+       <!-- Heading 3 -->
+       <template id="h3Temp">
+        <h3 class="draggable" draggable="true">Heading 3</h3>
+      </template>
+
+       <!-- Heading 4 -->
+       <template id="h4Temp">
+        <h4 class="draggable" draggable="true">Heading 4</h4>
+      </template>
+
+       <!-- Heading 5 -->
+       <template id="h5Temp">
+        <h5 class="draggable" draggable="true">Heading 5</h5>
+      </template>
+
+       <!-- Heading 6 -->
+       <template id="h6Temp">
+        <h6 class="draggable" draggable="true">Heading 6</h6>
+      </template>
+
+       <!-- Paragraph -->
+       <template id="pTemp">
+        <p class="draggable" draggable="true">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laudantium totam distinctio repellat cupiditate nihil fuga nesciunt id magnam ea cumque!</p>
+      </template>
+
+       <!-- Blockquote -->
+       <template id="blockquoteTemp">
+        <blockquote class="draggable" draggable="true">Lorem ipsum dolor sit amet, consectetur adipisicing elit</blockquote>
+      </template>
+
+       <!-- Div -->
+       <template id="divTemp">
+        <div class="contain" style="resize: both;"> consectetur adipisicing elit</div>
+      </template>
+
+      <!-- Hr -->
+      <template id="hrTemp">
+        <hr class="draggable" draggable="true"></hr>
+      </template>
+
+      <!-- Ol -->
+      <template id="olTemp">
+        <ol class="draggable" draggable="true">
+          <li class="draggable" draggable="true">List Item 1</li>
+          <li class="draggable" draggable="true">List Item 2</li>
+          <li class="draggable" draggable="true">List Item 3</li>
+        </ol>
+      </template>
+
+      <!-- ul -->
+      <template id="ulTemp">
+        <ul class="draggable" draggable="true">
+          <li class="draggable" draggable="true">List Item 1</li>
+          <li class="draggable" draggable="true">List Item 2</li>
+          <li class="draggable" draggable="true">List Item 3</li>
+        </ul>
+      </template>
+
+      <!-- li -->
+      <template id="liTemp">
+        <li class="draggable" draggable="true">List Item</li>
+      </template>
+
+      <!-- Pre -->
+      <template id="preTemp">
+        <pre class="draggable" draggable="true"></pre>
+      </template>
+
+      <!-- Text content -end  -->
+
+
+      <!-- Inline text semantics -->
+
+      <!-- a -->
+      <template id="aTemp">
+        <a href="" class="draggable" draggable="true">Link</a>
+      </template>
+
+      <!-- br -->
+      <template id="brTemp">
+        <br/>
+      </template>
+
+      <!-- Code -->
+      <template id="codeTemp">
+        <code class="draggable" draggable="true">Put you code here </code>
+      </template>
+
+      <!-- span -->
+      <template id="spanTemp">
+        <span class="draggable" draggable="true">Span content</span>
+      </template>
+      <!-- Inline text semantics end -->
+
+      <!-- forms -->
+
+       <!-- button -->
+       <template id="buttonTemp">
+        <button class="draggable" draggable="true">Button</button>
+      </template>
+
+       <!-- form -->
+       <template id="formTemp">
+        <form action="">
+          <label>Form input</label>
+        </form>
+      </template>
+
+       <!-- datalist -->
+       <template id="datalistTemp">
+        <label for="browser">Choose your browser from the list:</label>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers" class="draggable" draggable="true">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </datalist>
+      </template>
+
+       <!-- fieldset -->
+       <template id="fieldsetTemp">
+        <fieldset class="draggable" draggable="true">
+          <legend>Fieldset</legend>
+          <label>Username</label>
+          <input type="text">
+          <button>Submit</button>
+        </fieldset>
+      </template>
+
+       <!-- input-text -->
+       <template id="inputTextTemp">
+        <input type="text" class="draggable" draggable="true">
+      </template>
+
+      <!-- input-password -->
+      <template id="inputPasswordTemp">
+        <input type="password" class="draggable" draggable="true" name="" id="">
+      </template>
+
+      <!-- input-number -->
+      <template id="inputNumberTemp">
+        <input type="number" class="draggable" draggable="true" name="" id="">
+      </template>
+
+      <!-- input-checkbox -->
+      <template id="inputCheckboxTemp">
+        <input type="checkbox" class="draggable" draggable="true" name="" id="">
+      </template>
+
+      <!-- input-radio -->
+      <template id="inputRadioTemp">
+        <input type="radio" class="draggable" draggable="true" name="example" value="Example 1">
+        <input type="radio" class="draggable" draggable="true" name="example" value="Example 2">
+        <input type="radio" class="draggable" draggable="true" name="example" value="Example 3">
+
+      </template>
+
+      <!-- label -->
+      <template id="labelTemp">
+        <label for="">Label</label>
+      </template>
+
+      <!-- Option -->
+      <template id="optionTemp">
+        <option value="option">Option </option>
+      </template>
+
+      <!-- select -->
+      <template id="selectTemp">
+        <select class="draggable" draggable="true">
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </template>
+
+      <!-- textarea -->
+      <template id="textareaTemp">
+        <textarea class="draggable" draggable="true" name="" id="" cols="30" rows="10"></textarea>
+      </template>
+
+      <!-- forms end -->
+
+    </section>
+
+    <!-- sidebar start -->
+    <section class="sidebar">
+      <div class="logo-content">
+        <div class="logo">
+          <i class="bx bxl-c-plus-plus"></i>
+          <div class="logo-name">DevX</div>
+        </div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li class="search-li" style="position: relative; height: 40px">
+          <i class="bx bx-search-alt"></i>
+          <input type="text" name="" placeholder="Search..." id="" />
+          <span class="tooltip tooltipHide">Search</span>
+        </li>
+
+        <li class="accordion">
+          <a class="">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links-name">Layout</span>
+          </a>
+
+          <span class="tooltip tooltipHide">Layout</span>
+        </li>
+
+        <ul class="collapse ElementUl">
+          <li class="itemsList">
+            <div id="myGrid" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-grid"></i></div>
+              <div class="ElementName">Grid</div>
+            </div>
+            <div id="myGrid" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-grid"></i></div>
+              <div class="ElementName">Grid</div>
+            </div>
+
+            <div id="div" class="ElementItem contentCreatorButton" draggable="true">
+              <div class="ElementIcon"><i class="bx bx-checkbox"></i></div>
+              <div class="ElementName">div</div>
+            </div>
+            
+
+           
+          </li>
+        </ul>
+
+        <li class="accordion">
+          <a class="">
+            <i class="bx bxl-html5"></i>
+            <span class="links-name">Elements</span>
+          </a>
+          <span class="tooltip tooltipHide">Elements</span>
+        </li>
+
+        <!-- Elements Start -->
+
+        <ul class="collapse ElementUl" style="transition: all 1s;">
+         <p class="accordiond" style="transition: all 1s;"> <i class='bx bx-down-arrow'></i> Text Element </p>
+          <li class="itemsList collapsed " style="transition: all 1s;">
+
+            <!-- Text Content -->
+
+            <!-- Heading 1 -->
+            
+            <div id="h1" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Heading 1</div>
+            </div>
+
+            <!-- Heading 2 -->
+            
+            <div id="h2" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Heading 2</div>
+            </div>
+
+            <!-- Heading 3 -->
+            
+            <div id="h3" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Heading 3</div>
+            </div>
+
+            <!-- Heading 4 -->
+            
+            <div id="h4" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Heading 4</div>
+            </div>
+
+            <!-- Heading 5 -->
+            
+            <div id="h5" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Heading 5</div>
+            </div>
+
+            <!-- Heading 6 -->
+            
+            <div id="h6" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Heading 6</div>
+            </div>
+
+            <!-- Paragraph  -->
+            
+            <div id="p" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Paragraph</div>
+            </div>
+            
+            <!-- blockquote  -->
+            
+            <div id="blockquote" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Quote</div>
+            </div>
+            
+            </li>
+
+          <p class="accordiond"><i class='bx bx-down-arrow'></i> List Element</p>  
+
+          <li class="itemsList collapsed">
+
+            <!-- hr  -->
+            
+            <div id="hr" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Line</div>
+            </div>
+
+            <!-- ol  -->
+            
+            <div id="ol" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Ordered List</div>
+            </div>
+
+            <!-- ul  -->
+            
+            <div id="ul" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Unordered List</div>
+            </div>
+
+            <!-- li  -->
+            
+            <div id="li" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">List item</div>
+            </div>
+
+            <!-- pre  -->
+            
+            <div id="pre" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Pre</div>
+            </div>
+
+
+          </li>
+
+            
+            <!-- Text Content  end-->
+
+
+            <!-- Inline text semantics -->
+
+            <p class="accordiond"><i class='bx bx-down-arrow'></i> Inline Element</p>
+            <li class="itemsList collapsed">
+            <!-- pre  -->
+            
+            <div id="a" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Link</div>
+            </div>
+
+
+            <!-- Break  -->
+            
+            <div id="br" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Break</div>
+            </div>
+
+            <!-- Code  -->
+            
+            <div id="code" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Code</div>
+            </div>
+
+            <!-- Span  -->
+            
+            <div id="span" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Span</div>
+            </div>
+
+
+            <!-- Inline text semantics end -->
+            </li>
+
+
+            <!-- Froms -->
+            <p class="accordiond"><i class='bx bx-down-arrow'></i> Form Element</p>
+            <li class="itemsList collapsed">
+             <!-- button  -->
+            
+             <div id="button" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Button</div>
+            </div>
+
+             <!-- Datalist  -->
+            
+             <div id="datalist" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Datalist</div>
+            </div>
+
+             <!-- Fieldset  -->
+            
+             <div id="fieldset" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Fieldset</div>
+            </div>
+
+             <!-- Form  -->
+            
+             <div id="form" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Form</div>
+            </div>
+
+             <!-- label  -->
+            
+             <div id="label" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Label</div>
+            </div>
+
+             <!-- Option  -->
+            
+             <div id="option" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Option</div>
+            </div>
+
+             <!-- Select  -->
+            
+             <div id="select" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Select</div>
+            </div>
+
+             <!-- TextArea  -->
+            
+             <div id="textarea" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Textarea</div>
+            </div>
+
+            <!-- input-text  -->
+            
+            <div id="inputText" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Text</div>
+            </div>
+
+            <!-- input-password  -->
+            
+            <div id="inputPassword" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Password</div>
+            </div>
+
+            <!-- input-number  -->
+            
+            <div id="inputNumber" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Number</div>
+            </div>
+
+            <!-- input-checkbox  -->
+            
+            <div id="inputCheckbox" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Checkbox</div>
+            </div>
+
+            <!-- input-radio  -->
+            
+            <div id="inputRadio" class="ElementItem contentCreatorButton" draggable="true" >
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Radio</div>
+            </div>
+
+            <!-- Forms end -->
+
+            </li>
+
+            
+        </ul>
+
+        <!-- Elements end -->
+
+        <li class="accordion">
+          <a class="">
+            <i class="bx bxs-component"></i>
+            <span class="links-name">Components</span>
+          </a>
+          <span class="tooltip tooltipHide">Components</span>
+        </li>
+
+        <ul class="collapse ElementUl">
+          <li class="itemsList">
+            <div class="ElementItem">
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Text</div>
+            </div>
+            <div class="ElementItem">
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Text</div>
+            </div>
+            <div class="ElementItem">
+              <div class="ElementIcon"><i class="bx bx-text"></i></div>
+              <div class="ElementName">Text</div>
+            </div>
+
+            <div class="ElementItem">
+              <div class="ElementIcon"></div>
+              <div class="ElementName"></div>
+            </div>
+
+            <div class="ElementItem">
+              <div class="ElementIcon"></div>
+              <div class="ElementName"></div>
+            </div>
+
+            <div class="ElementItem">
+              <div class="ElementIcon"></div>
+              <div class="ElementName"></div>
+            </div>
+          </li>
+        </ul>
+
+        <li class="accordion">
+          <a class="">
+            <i class="bx bx-navigation"></i>
+            <span class="links-name">Navigation</span>
+          </a>
+          <span class="tooltip tooltipHide">Navigation</span>
+        </li>
+
+        <ul class="collapse"></ul>
+
+        <li class="accordion">
+          <a class="">
+            <i class="bx bx-file-blank"></i>
+            <span class="links-name">Pages</span>
+          </a>
+          <span class="tooltip tooltipHide">Pages</span>
+        </li>
+        <ul class="collapse ElementUl"></ul>
+
+        <ul class="collapse expand"></ul>
+        <li class="accordion">
+          <a class="">
+            <i class="bx bxs-data"></i>
+            <span class="links-name">CMS</span>
+          </a>
+          <span class="tooltip tooltipHide">CMS</span>
+        </li>
+
+        <ul class="collapse expand"></ul>
+        <li class="accordion">
+          <a class="">
+            <i class="bx bx-photo-album"></i>
+            <span class="links-name">Assets</span>
+          </a>
+          <span class="tooltip tooltipHide">Assets</span>
+        </li>
+
+        <ul class="collapse expand"></ul>
+        <li class="accordion">
+          <a class="">
+            <i class="bx bx-cog"></i>
+            <span class="links-name">Setting</span>
+          </a>
+          <span class="tooltip tooltipHide">Setting</span>
+        </li>
+
+        <ul class="collapse expand"></ul>
+      </ul>
+
+      <div class="profile-content">
+        <div class="profile">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="" class="" />
+            <div class="name-job">
+              <div class="name">Samuel Kedir</div>
+              <div class="job">Citizen Developer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log-out"></i>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sidebar end -->
+
+    <section class="home-content">
+      <!-- Image and text -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"
+                >Preview <span class="sr-only">(current)</span></a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Export</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Responsive</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdownMenuLink"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Dropdown link
+              </a>
+              <div
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdownMenuLink"
+              >
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <section id="workspace">
+        <div id="contan1" class="contain" onclick=""></div>
+         <div  id="contain2" class="myGrid contain "  onclick="">
+          <div id="gridChild1" class="gridChild contain"  style="position: relative;" onclick="getId(this)">abra kadabra bla bla</div>
+          <div id="gridChild2" class="gridChild contain" style="position: relative;" onclick="getId(this)">2</div>
+          <div id="gridChild3" class="gridChild contain" style="position: relative;" onclick="getId(this)">3</div>
+          <div id="gridChild4" class="gridChild contain" style="position: relative;" onclick="getId(this)">4</div>
+          <div id="gridChild5" class="gridChild contain" style="position: relative;" onclick="getId(this)">3</div>
+          <div id="gridChild6" class="gridChild contain" style="position: relative;" onclick="getId(this)">4</div>
+        </div>
+        <div id="contain3" class="contain" onclick="getId(this)" style="resize: both; overflow: auto;">
+          <div class="draggable" draggable="true" ></div>
+        </div>
+      </section>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
